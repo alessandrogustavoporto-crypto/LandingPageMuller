@@ -197,7 +197,7 @@ footer{background:var(--bh);border-top:1px solid rgba(255,255,255,.08);padding:6
 .wafb{width:60px;height:60px;background:var(--gwa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);cursor:pointer;transition:var(--tr);text-decoration:none;border:3px solid rgba(255,255,255,.3)}
 .wafb:hover{background:var(--gwd);transform:scale(1.08);box-shadow:0 10px 32px rgba(37,211,102,.55)}
 .wafb svg{width:32px;height:32px;color:white}
-.wafp{position:absolute;top:0;right:0;width:60px;height:60px;border-radius:50%;background:var(--gwa);opacity:.3;animation:fp 2.5s ease-out infinite}
+.wafp{position:absolute;top:0;right:0;width:60px;height:60px;border-radius:50%;background:var(--gwa);opacity:.3;animation:fp 2.5s ease-out infinite;pointer-events:none;z-index:-1}
 @keyframes fp{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.8);opacity:0}}
 .fi{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fi.vis{opacity:1;transform:translateY(0)}
