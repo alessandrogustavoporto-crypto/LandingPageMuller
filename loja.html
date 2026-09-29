@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Ofertas da Loja | Dental Muller</title>
 <link rel="icon" type="image/png" href="images/favicon.png"/>
@@ -232,7 +232,12 @@ function cats(){var cs=[...new Set(allP.map(function(p){return p.categoria||'Out
 }
 function setC(c){actCat=c;document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('active',b.dataset.cat===c);});render();}
 
-)();
+document.getElementById('search-input').addEventListener('input',function(e){srch=e.target.value.toLowerCase().trim();render();});
+var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>20);},{passive:true});
+var hb=document.getElementById('hbtn2'),mm=document.getElementById('mmenu2');
+hb.addEventListener('click',function(){var o=mm.classList.toggle('op');hb.classList.toggle('op',o);hb.setAttribute('aria-expanded',o);});
+document.querySelectorAll('.ml2').forEach(function(l){l.addEventListener('click',function(){mm.classList.remove('op');hb.classList.remove('op');hb.setAttribute('aria-expanded','false');});});
+(async function(){document.getElementById('loading-state').style.display='block';document.getElementById('products-grid').style.display='none';allP=await load();document.getElementById('loading-state').style.display='none';cats();render();})();
 </script>
 </body></html>
 
