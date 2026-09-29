@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html><html lang="pt-BR"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Detalhes do Produto | Dental Muller</title>
 <link rel="icon" type="image/png" href="images/favicon.png"/>
@@ -125,7 +125,7 @@ function demo(id){
 
 async function loadP(id){
   if(!id) return null;
-  if(id.startsWith('d') || !SUPA_KEY){ return demo(id); }
+  if(id === 'd1' || id === 'd2' || id === 'd3' || !SUPA_KEY){ return demo(id); }
   try{
     var r=await fetch(SUPA_URL+'/rest/v1/produtos?id=eq.'+id+'&select=*',{headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});
     if(!r.ok)throw 1;
