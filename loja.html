@@ -195,49 +195,42 @@ Consultar no WhatsApp
 </div></div></footer>
 <script>
 var SUPA_URL='https://gjjmnwdpwuxkwcecykjo.supabase.co';
-var SUPA_KEY='';
+var SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdqam1ud2Rwd3V4a3djZWN5a2pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MzMwMjQsImV4cCI6MjEwNTMwOTAyNH0.c66EfaMPgkPuNzmuzEVWeN6xL2Jgj88NBAb525zMDbc';
 var WAN='5571993053068';
 var allP=[];var actCat='todos';var srch='';
 async function load(){
-  if(!SUPA_KEY){return demo();}
+  if(!SUPA_KEY)return demo();
   try{
     var r=await fetch(SUPA_URL+'/rest/v1/produtos?select=*&order=created_at.desc',{headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});
     if(!r.ok)throw 1;
     var data=await r.json();
     return data.length?data:demo();
-  }catch(e){console.error('Supabase erro:',e);return demo();}
+  }catch(e){console.error(e);return demo();}
 }
 function demo(){return[
-{id:'d1',nome:'Resina Palfique LX5 - Tokuyama',categoria:'Resinas e Restauracao',subdescricao:'Resina Nanohibrida',descricao:'Seringa por unidade 3,8g.',preco:'R$ 295,00',foto:''},
-{id:'d2',nome:'Resina Forma - Ultradent',categoria:'Resinas e Restauracao',subdescricao:'Resina Nanohibrida',descricao:'Seringa 4g.',preco:'R$ 109,90',foto:''},
-{id:'d3',nome:'Resina Estelite Omega - Tokuyama',categoria:'Resinas e Restauracao',subdescricao:'Resina Composta',descricao:'Seringa 4g.',preco:'R$ 579,00',foto:''},
-{id:'d4',nome:'Lavadora Ultrassonica BioWash - Bioart',categoria:'Equipamentos',subdescricao:'2,8 litros',descricao:'Para higienizacao de instrumentais.',preco:'R$ 1.195,00',foto:''},
-{id:'d5',nome:'Esculpidor Hollenback No 35 - Millennium',categoria:'Academicos',subdescricao:'Aco inox',descricao:'Para restauracoes.',preco:'R$ 74,90',foto:''},
-{id:'d6',nome:'Afastador de Bochecha - Bioart',categoria:'Instrumentais Cirurgicos',subdescricao:'Par',descricao:'Afastador anatomico.',preco:'R$ 39,90',foto:''},
-{id:'d7',nome:'Broca Carbide FG 2114 - KG Sorensen',categoria:'Instrumentais Cirurgicos',subdescricao:'Caixa 10un',descricao:'Broca tronco-conica.',preco:'R$ 21,50',foto:''},
-{id:'d8',nome:'Sugador de Saliva - Descarpack',categoria:'Higiene e Descartaveis',subdescricao:'Pct 100un',descricao:'Descartavel para uso clinico.',preco:'R$ 24,90',foto:''},
-{id:'d9',nome:'Mascara Cirurgica Tripla - Med-Clinic',categoria:'Biosseguranca',subdescricao:'Cx 50un',descricao:'Com elastico.',preco:'R$ 16,90',foto:''},
-{id:'d10',nome:'Luva Nitrilica - Supermax',categoria:'Biosseguranca',subdescricao:'Cx 100un',descricao:'Sem po. Tam P, M, G.',preco:'R$ 38,00',foto:''}
+{id:'d1',nome:'Resina Palfique LX5',categoria:'Resinas',subdescricao:'Nanohibrida',descricao:'Seringa 3,8g',preco:'R$ 295,00',foto:''},
+{id:'d2',nome:'Afastador',categoria:'Cirurgia',subdescricao:'Par',descricao:'Afastador',preco:'R$ 39,90',foto:''}
 ];}
 var WSVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>';
 var PISVG='<svg class="piph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>';
 function card(p){
-  var preco=p.preco||'Consultar';
-  var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' ('+preco+'). Podem ajudar?');
+  var pr=p.preco||'Consultar';
+  var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' ('+pr+'). Podem ajudar?');
   var img=p.foto?'<img src="'+p.foto+'" alt="'+p.nome+'" loading="lazy"/>':PISVG;
   var sub=p.subdescricao?'<p class="pdesc">'+p.subdescricao+'</p>':'';
   return '<article class="pc">'
     +'<div class="pimg">'+img+'</div>'
-    +'<div class="pbody"><div class="pcat">'+p.categoria+'</div>'
+    +'<div class="pbody"><div class="pcat">'+(p.categoria||'Outros')+'</div>'
     +'<h3 class="pnm">'+p.nome+'</h3>'+sub
-    +'<div class="ppw"><div class="pp">'+preco+'</div></div></div>'
+    +'<div class="ppw"><div class="pp">'+pr+'</div></div></div>'
     +'<div class="pact"><button class="bdet" onclick="openM(\''+p.id+'\')" id="det-'+p.id+'">Detalhes</button>'
     +'<a class="bwa" href="'+wa+'" target="_blank" rel="noopener" id="wac-'+p.id+'" aria-label="WhatsApp">'+WSVG+'</a>'
     +'</div></article>';
 }
 function filtered(){return allP.filter(function(p){
-  var mc=actCat==='todos'||p.categoria===actCat;
-  var ms=!srch||p.nome.toLowerCase().indexOf(srch)>=0||(p.descricao||'').toLowerCase().indexOf(srch)>=0||(p.subdescricao||'').toLowerCase().indexOf(srch)>=0;
+  var c=p.categoria||'Outros';
+  var mc=actCat==='todos'||c===actCat;
+  var ms=!srch||(p.nome&&p.nome.toLowerCase().indexOf(srch)>=0)||(p.descricao&&p.descricao.toLowerCase().indexOf(srch)>=0)||(p.subdescricao&&p.subdescricao.toLowerCase().indexOf(srch)>=0);
   return mc&&ms;
 });}
 function render(){var f=filtered();var g=document.getElementById('products-grid');var e=document.getElementById('empty-state');
@@ -245,59 +238,23 @@ function render(){var f=filtered();var g=document.getElementById('products-grid'
   else{g.style.display='grid';e.style.display='none';g.innerHTML=f.map(card).join('');}
   document.getElementById('result-txt').innerHTML='<strong>'+f.length+'</strong> produto'+(f.length!==1?'s':'')+' disponivel'+(f.length!==1?'eis':'');
 }
-function cats(){var cs=[...new Set(allP.map(function(p){return p.categoria;}))].sort();var fl=document.getElementById('cat-filters');
+function cats(){var cs=[...new Set(allP.map(function(p){return p.categoria||'Outros';}))].sort();var fl=document.getElementById('cat-filters');
   document.getElementById('cnt-todos').textContent=allP.length;document.getElementById('stat-total').textContent=allP.length;
-  cs.forEach(function(c){var n=allP.filter(function(p){return p.categoria===c;}).length;var b=document.createElement('button');
+  cs.forEach(function(c){var n=allP.filter(function(p){return (p.categoria||'Outros')===c;}).length;var b=document.createElement('button');
     b.className='cbtn';b.dataset.cat=c;b.id='cat-'+c.replace(/\s+/g,'').toLowerCase();
     b.innerHTML=c+' <span class="ccnt">'+n+'</span>';b.addEventListener('click',function(){setC(c);});fl.appendChild(b);});
 }
 function setC(c){actCat=c;document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('active',b.dataset.cat===c);});render();}
 function openM(id){var p=allP.find(function(x){return x.id==id;});if(!p)return;
-  var preco=p.preco||'Consultar';
-  var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' ('+preco+'). Podem ajudar?');
+  var pr=p.preco||'Consultar';
+  var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' ('+pr+'). Podem ajudar?');
   document.getElementById('modal-img').src=p.foto||'';document.getElementById('modal-img').alt=p.nome;
-  document.getElementById('modal-cat').textContent=p.categoria;document.getElementById('modal-nm').textContent=p.nome;
+  document.getElementById('modal-cat').textContent=p.categoria||'Outros';document.getElementById('modal-nm').textContent=p.nome;
   document.getElementById('modal-desc').textContent=(p.subdescricao?p.subdescricao+'. ':''+(p.descricao||''));
-  document.getElementById('modal-pold').textContent='';document.getElementById('modal-p').textContent=preco;
+  document.getElementById('modal-pold').textContent='';document.getElementById('modal-p').textContent=pr;
   document.getElementById('modal-wa-btn').href=wa;
   document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';
 }
-function closeM(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
-document.getElementById('modal-close').addEventListener('click',closeM);
-document.getElementById('modal-overlay').addEventListener('click',function(e){if(e.target===e.currentTarget)closeM();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
-document.getElementById('search-input').addEventListener('input',function(e){srch=e.target.value.toLowerCase().trim();render();});
-var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>20);},{passive:true});
-var hb=document.getElementById('hbtn2'),mm=document.getElementById('mmenu2');
-hb.addEventListener('click',function(){var o=mm.classList.toggle('op');hb.classList.toggle('op',o);hb.setAttribute('aria-expanded',o);});
-document.querySelectorAll('.ml2').forEach(function(l){l.addEventListener('click',function(){mm.classList.remove('op');hb.classList.remove('op');hb.setAttribute('aria-expanded','false');});});
-(async function(){document.getElementById('loading-state').style.display='block';document.getElementById('products-grid').style.display='none';allP=await load();document.getElementById('loading-state').style.display='none';cats();render();})();
-
-try{var r=await fetch(SUPA_URL+'/rest/v1/'+TABLE+'?select=*&ativo=eq.true&order=created_at.desc',{headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});if(!r.ok)throw 1;return await r.json();}catch(e){return demo();}
-}
-function fmt(v){return 'R$ '+v.toFixed(2).replace('.',',');}
-var WSVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>';
-var PISVG='<svg class="piph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>';
-function card(p){
-var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' por '+fmt(p.preco_por));
-var img=p.imagem_url?'<img src="'+p.imagem_url+'" alt="'+p.nome+'" loading="lazy"/>':PISVG;
-var op=p.preco_de&&p.preco_de>p.preco_por?'<div class="ppold">'+fmt(p.preco_de)+'</div>':'';
-return '<article class="pc">'+(p.destaque?'<div class="pbadge">OFERTA</div>':'')
-+'<div class="pimg">'+img+'</div>'
-+'<div class="pbody"><div class="pcat">'+p.categoria+'</div>'
-+'<h3 class="pnm">'+p.nome+'</h3>'
-+(p.descricao?'<p class="pdesc">'+p.descricao+'</p>':'')
-+'<div class="ppw">'+op+'<div class="pp">'+fmt(p.preco_por)+'</div></div></div>'
-+'<div class="pact">'
-+'<button class="bdet" onclick="openM('+p.id+')" id="det-'+p.id+'">Detalhes</button>'
-+'<a class="bwa" href="'+wa+'" target="_blank" rel="noopener" id="wac-'+p.id+'" aria-label="WhatsApp">'+WSVG+'</a>'
-+'</div></article>';
-}
-function filtered(){return allP.filter(function(p){var mc=actCat==='todos'||p.categoria===actCat;var ms=!srch||p.nome.toLowerCase().indexOf(srch)>=0||(p.descricao||'').toLowerCase().indexOf(srch)>=0;return mc&&ms;});}
-function render(){var f=filtered();var g=document.getElementById('products-grid');var e=document.getElementById('empty-state');if(f.length===0){g.style.display='none';e.style.display='block';}else{g.style.display='grid';e.style.display='none';g.innerHTML=f.map(card).join('');}document.getElementById('result-txt').innerHTML='<strong>'+f.length+'</strong> produto'+(f.length!==1?'s':'')+' disponivel'+(f.length!==1?'eis':'');}
-function cats(){var cs=[...new Set(allP.map(function(p){return p.categoria;}))].sort();var fl=document.getElementById('cat-filters');document.getElementById('cnt-todos').textContent=allP.length;document.getElementById('stat-total').textContent=allP.filter(function(p){return p.destaque;}).length;cs.forEach(function(c){var n=allP.filter(function(p){return p.categoria===c;}).length;var b=document.createElement('button');b.className='cbtn';b.dataset.cat=c;b.id='cat-'+c.replace(/\s+/g,'').toLowerCase();b.innerHTML=c+' <span class="ccnt">'+n+'</span>';b.addEventListener('click',function(){setC(c);});fl.appendChild(b);});}
-function setC(c){actCat=c;document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('active',b.dataset.cat===c);});render();}
-function openM(id){var p=allP.find(function(x){return x.id==id;});if(!p)return;var wa='https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Interesse: '+p.nome+' por '+fmt(p.preco_por));document.getElementById('modal-img').src=p.imagem_url||'';document.getElementById('modal-img').alt=p.nome;document.getElementById('modal-cat').textContent=p.categoria;document.getElementById('modal-nm').textContent=p.nome;document.getElementById('modal-desc').textContent=p.descricao||'';document.getElementById('modal-pold').textContent=p.preco_de&&p.preco_de>p.preco_por?'De: '+fmt(p.preco_de):'';document.getElementById('modal-p').textContent=fmt(p.preco_por);document.getElementById('modal-wa-btn').href=wa;document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';}
 function closeM(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
 document.getElementById('modal-close').addEventListener('click',closeM);
 document.getElementById('modal-overlay').addEventListener('click',function(e){if(e.target===e.currentTarget)closeM();});
