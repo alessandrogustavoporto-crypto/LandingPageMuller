@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Detalhes do Produto | Dental Muller</title>
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{--bd:#0066cc;--bm:#1a75d1;--bl:#4d94ff;--ba:#004c99;--bh:#003366;--w:#fff;--gl:#F5F8FA;--gm:#e8eef4;--gb:#dce6ef;--gt:#263238;--gs:#546e7a;--gmu:#78909c;--gwa:#25D366;--gwd:#1ebe5d;--rmd:14px;--rlg:22px;--rxl:30px;--sms:0 2px 8px rgba(0,102,204,.08);--smd:0 6px 24px rgba(0,102,204,.12);--slg:0 16px 48px rgba(0,102,204,.15);--tr:all .25s ease;--fb:'Inter',sans-serif;--fh:'Plus Jakarta Sans',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);color:var(--gt);background:var(--w);overflow-x:hidden;line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+.container{max-width:1240px;margin:0 auto;padding:0 24px}
+#nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gb);transition:var(--tr)}
+#nav.sc{box-shadow:var(--smd)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:72px}
+.nlinks{display:flex;align-items:center;gap:6px;list-style:none}
+.nlinks a{font-size:.875rem;font-weight:600;color:var(--gt);padding:8px 14px;border-radius:8px;transition:var(--tr)}
+.nlinks a:hover{background:var(--gl);color:var(--bd)}
+.nav-ofertas{display:inline-flex!important;align-items:center!important;line-height:1!important;background:var(--bd)!important;color:var(--w)!important;border-radius:100px!important;padding:8px 16px!important;font-weight:700!important;box-shadow:0 2px 10px rgba(0,102,204,.35)}
+.nav-ofertas:hover{background:var(--bm)!important;transform:translateY(-1px)!important}
+.nr{display:flex;align-items:center;gap:12px}
+.nwa{display:inline-flex;align-items:center;gap:8px;background:var(--gwa);color:var(--w);font-weight:700;font-size:.85rem;padding:10px 20px;border-radius:100px;transition:var(--tr)}
+.nwa:hover{background:var(--gwd);transform:translateY(-1px)}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;border:none;background:none}
+.hbg span{display:block;width:24px;height:2px;background:var(--gt);border-radius:2px;transition:var(--tr)}
+.hbg.op span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.op span:nth-child(2){opacity:0}
+.hbg.op span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mm{display:none;position:fixed;top:72px;left:0;right:0;background:var(--w);border-bottom:1px solid var(--gb);padding:16px 24px 24px;z-index:999;box-shadow:var(--slg)}
+.mm.op{display:block}
+.mm ul{list-style:none;display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+.mm ul a{display:block;padding:12px 16px;font-weight:600;color:var(--gt);border-radius:10px;transition:var(--tr)}
+.mm ul a:hover{background:var(--gl);color:var(--bd)}
+.nav-ofertas-mob{color:var(--bd)!important;font-weight:700!important}
+.main-prod{flex:1;padding:60px 0 100px;background:var(--gl)}
+.p-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;background:var(--w);border-radius:var(--rxl);box-shadow:var(--slg);padding:40px;align-items:center}
+.p-img-col{background:var(--gl);border-radius:var(--rlg);display:flex;align-items:center;justify-content:center;padding:40px;min-height:400px}
+.p-img-col img{max-height:400px;object-fit:contain;mix-blend-mode:multiply}
+.p-info-col{padding:20px 0}
+.p-cat{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--bd);margin-bottom:12px;display:inline-block;background:rgba(0,102,204,.1);padding:6px 14px;border-radius:50px}
+.p-title{font-family:var(--fh);font-size:2.5rem;font-weight:900;color:var(--gt);line-height:1.2;margin-bottom:16px}
+.p-sub{font-size:1.1rem;color:var(--bd);font-weight:600;margin-bottom:24px}
+.p-desc{font-size:1.05rem;color:var(--gs);line-height:1.7;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--gb)}
+.p-price-box{margin-bottom:32px}
+.p-price-label{font-size:.9rem;color:var(--gmu);font-weight:600;margin-bottom:4px}
+.p-price{font-family:var(--fh);font-size:3rem;font-weight:900;color:#e53e3e;line-height:1}
+.p-actions{display:flex;gap:16px}
+.btn-buy{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--gwa);color:var(--w);font-family:var(--fh);font-size:1.1rem;font-weight:800;padding:18px 36px;border-radius:100px;transition:var(--tr);box-shadow:0 8px 24px rgba(37,211,102,.3);flex:1;text-align:center}
+.btn-buy:hover{background:var(--gwd);transform:translateY(-3px);box-shadow:0 12px 32px rgba(37,211,102,.4)}
+.btn-buy svg{width:24px;height:24px}
+.btn-back{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--w);color:var(--gs);font-weight:700;padding:18px 24px;border-radius:100px;border:2px solid var(--gb);transition:var(--tr)}
+.btn-back:hover{background:var(--gl);color:var(--gt);border-color:var(--gmu)}
+.loader{display:inline-block;width:60px;height:60px;border:5px solid var(--gm);border-top-color:var(--bd);border-radius:50%;animation:spin .8s linear infinite;margin:100px auto;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+footer{background:var(--bh);border-top:1px solid rgba(255,255,255,.08);padding:32px 0;color:rgba(255,255,255,.8);margin-top:auto}
+.fbot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.fcopy{font-size:.8rem;color:rgba(255,255,255,.5)}
+.fwab{display:inline-flex;align-items:center;gap:8px;background:var(--gwa);color:white;font-size:.85rem;font-weight:700;padding:10px 20px;border-radius:100px;transition:var(--tr)}
+.fwab:hover{background:var(--gwd)}
+@media(max-width:960px){
+.p-wrap{grid-template-columns:1fr;gap:30px;padding:24px}
+.p-img-col{min-height:300px;padding:24px}
+.p-title{font-size:2rem}
+.nlinks,.nwa{display:none}.hbg{display:flex}
+}
+@media(max-width:600px){
+.p-actions{flex-direction:column}
+.p-price{font-size:2.4rem}
+}
+</style></head>
+<body>
+<nav id="nav"><div class="container"><div class="ni">
+<a href="index.html" class="nlog"><img src="images/logo.png" alt="Dental Muller" style="height:56px;width:auto;"/></a>
+<ul class="nlinks">
+<li><a href="index.html#hero">Inicio</a></li>
+<li><a href="index.html#about">Quem Somos</a></li>
+<li><a href="index.html#prods">Produtos</a></li>
+<li><a href="loja.html" class="nav-ofertas">Ofertas da Loja</a></li>
+<li><a href="index.html#audnc">Para Quem</a></li>
+<li><a href="index.html#loc">Localizacao</a></li>
+<li><a href="index.html#cont">Contato</a></li>
+</ul>
+<div class="nr">
+<a href="https://wa.me/5571993053068" class="nwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Falar no WhatsApp</a>
+<button class="hbg" id="hbtn2" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</div></div></div></nav>
+<div class="mm" id="mmenu2">
+<ul>
+<li><a href="index.html#hero" class="ml2">Inicio</a></li>
+<li><a href="index.html#about" class="ml2">Quem Somos</a></li>
+<li><a href="index.html#prods" class="ml2">Produtos</a></li>
+<li><a href="loja.html" class="ml2 nav-ofertas-mob">Ofertas da Loja</a></li>
+<li><a href="index.html#audnc" class="ml2">Para Quem</a></li>
+<li><a href="index.html#loc" class="ml2">Localizacao</a></li>
+<li><a href="index.html#cont" class="ml2">Contato</a></li>
+</ul>
+<a href="https://wa.me/5571993053068" class="fwab" style="width:100%;justify-content:center" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<main class="main-prod">
+  <div class="container" id="prod-container">
+    <div class="loader" id="loading"></div>
+  </div>
+</main>
+
+<footer><div class="container"><div class="fbot">
+<p class="fcopy">&copy; 2026 Dental Muller. Todos os direitos reservados.</p>
+<a href="https://wa.me/5571993053068" class="fwab" target="_blank" rel="noopener">WhatsApp</a>
+</div></div></footer>
+
+<script>
+var SUPA_URL='https://gjjmnwdpwuxkwcecykjo.supabase.co';
+var SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdqam1ud2Rwd3V4a3djZWN5a2pvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3MzMwMjQsImV4cCI6MjEwNTMwOTAyNH0.c66EfaMPgkPuNzmuzEVWeN6xL2Jgj88NBAb525zMDbc';
+var WAN='5571993053068';
+var PISVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="width:120px;color:var(--gb);"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>';
+
+function demo(id){
+  var arr = [
+  {id:'d1',nome:'Resina Palfique LX5 - Tokuyama',categoria:'Resinas e Restauracao',subdescricao:'Resina Nanohibrida',descricao:'Seringa por unidade 3,8g.',preco:'R$ 295,00',foto:''},
+  {id:'d2',nome:'Resina Forma - Ultradent',categoria:'Resinas e Restauracao',subdescricao:'Resina Nanohibrida',descricao:'Seringa 4g.',preco:'R$ 109,90',foto:''},
+  {id:'d3',nome:'Resina Estelite Omega - Tokuyama',categoria:'Resinas e Restauracao',subdescricao:'Resina Composta',descricao:'Seringa 4g.',preco:'R$ 579,00',foto:''}
+  ];
+  return arr.find(a=>a.id==id) || arr[0];
+}
+
+async function loadP(id){
+  if(!id) return null;
+  if(id.startsWith('d') || !SUPA_KEY){ return demo(id); }
+  try{
+    var r=await fetch(SUPA_URL+'/rest/v1/produtos?id=eq.'+id+'&select=*',{headers:{'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY}});
+    if(!r.ok)throw 1;
+    var data=await r.json();
+    return data.length?data[0]:null;
+  }catch(e){return demo(id);}
+}
+
+(async function(){
+  var params = new URLSearchParams(window.location.search);
+  var pid = params.get('id');
+  var cont = document.getElementById('prod-container');
+  if(!pid){
+    cont.innerHTML='<div style="text-align:center;padding:100px 0;"><h2>Produto nao especificado.</h2><br><a href="loja.html" class="btn-back">Voltar para a loja</a></div>';
+    return;
+  }
+  
+  var p = await loadP(pid);
+  if(!p){
+    cont.innerHTML='<div style="text-align:center;padding:100px 0;"><h2>Produto nao encontrado.</h2><br><a href="loja.html" class="btn-back">Voltar para a loja</a></div>';
+    return;
+  }
+
+  var pr = p.preco||'Consultar';
+  var wa = 'https://wa.me/'+WAN+'?text='+encodeURIComponent('Ola, Dental Muller! Tenho interesse no produto: '+p.nome+' ('+pr+'). Podem me ajudar?');
+  var img = p.foto?'<img src="'+p.foto+'" alt="'+p.nome+'"/>':PISVG;
+  
+  document.title = p.nome + ' | Dental Muller';
+  
+  cont.innerHTML = 
+    '<div class="p-wrap">' +
+      '<div class="p-img-col">' + img + '</div>' +
+      '<div class="p-info-col">' +
+        '<div class="p-cat">' + (p.categoria||'Oferta') + '</div>' +
+        '<h1 class="p-title">' + p.nome + '</h1>' +
+        (p.subdescricao ? '<div class="p-sub">' + p.subdescricao + '</div>' : '') +
+        (p.descricao ? '<div class="p-desc">' + p.descricao + '</div>' : '') +
+        '<div class="p-price-box"><div class="p-price-label">Preco Promocional</div><div class="p-price">' + pr + '</div></div>' +
+        '<div class="p-actions">' +
+          '<a href="'+wa+'" target="_blank" class="btn-buy"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Comprar no WhatsApp</a>' +
+          '<a href="loja.html" class="btn-back">Voltar</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+})();
+
+var nav=document.getElementById('nav');window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>20);},{passive:true});
+var hb=document.getElementById('hbtn2'),mm=document.getElementById('mmenu2');
+hb.addEventListener('click',function(){var o=mm.classList.toggle('op');hb.classList.toggle('op',o);hb.setAttribute('aria-expanded',o);});
+document.querySelectorAll('.ml2').forEach(function(l){l.addEventListener('click',function(){mm.classList.remove('op');hb.classList.remove('op');hb.setAttribute('aria-expanded','false');});});
+</script>
+</body></html>
